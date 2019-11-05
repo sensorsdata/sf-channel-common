@@ -72,6 +72,11 @@ public class MessagingTask {
   private PushTask pushTask;
 
   /**
+   * 短信任务
+   */
+  protected TextMsgTask textMsgTask;
+
+  /**
    * 是否发送成功
    */
   private boolean success = true;
