@@ -57,8 +57,25 @@ public class MessagingTask {
    * 受众 ID
    */
   private Integer planAudienceId;
+  /**
+   * 计划受众计算时间
+   */
   private Long planAudienceEntryTime;
+  /**
+   * 实验组 ID
+   */
   private Integer planStrategyId;
+  /**
+   * 策略器 ID
+   */
+  private Integer strategyUnitId;
+  /**
+   * 计划类型
+   */
+  private String planType;
+  /**
+   * 发起发送消息的请求的时间
+   */
   private Long triggerTime;
 
   /**
