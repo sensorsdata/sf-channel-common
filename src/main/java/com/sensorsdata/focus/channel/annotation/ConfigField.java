@@ -49,4 +49,9 @@ public @interface ConfigField {
    * 前端是否使用密码输入框
    */
   boolean secret() default false;
+
+  /**
+   * 字段输入类型，例如："text-文本框，radio-单选按钮，select-下拉框"
+   */
+  String inputType() default "text";
 }
