@@ -24,7 +24,7 @@ import lombok.Data;
  * @since 2020/06/22 13:39
  */
 @Data
-public class ChannelMsg<T> {
+public class ChannelMsg {
   /** 神策系统 msgId 全局唯一，用途：消息发送去重用的默认 sendId */
   private String msgId;
   /** 通道返回 msgId，在调用完通道接口之后需要设置此字段 */
@@ -41,7 +41,7 @@ public class ChannelMsg<T> {
   /**
    * 通道消息体
    */
-  private T body;
+  private String body;
 
   /** 调用通道发送接口是否成功 */
   private boolean success = false;

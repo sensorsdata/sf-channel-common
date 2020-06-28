@@ -29,7 +29,7 @@ import java.util.List;
  * 3. 调用 send(channelMsgs) 接口。在一个实例的生命周期内可能会被多次调用 send(channelMsgs) 接口；
  * 4. 调用 close() 关闭资源
  */
-public interface SendClient<T> extends Closeable {
+public interface SendClient extends Closeable {
 
   /**
    * 初始化 SendClient。
@@ -43,7 +43,7 @@ public interface SendClient<T> extends Closeable {
    *
    * @param channelMsgs 需要发送的数据
    */
-  void send(List<ChannelMsg<T>> channelMsgs) throws Exception;
+  void send(List<ChannelMsg> channelMsgs) throws Exception;
 
   /**
    * 关闭 client。如果需要释放资源，请在子类实现该函数。
