@@ -27,11 +27,11 @@ public interface CallbackClient {
 
   /**
    * 消息验签并获取统一消息回执
-   * @param channelId channel ID
+   * @param channelServiceCode 通道厂商代码
    * @param paramMap  回执请求参数
    * @return 消息回执
    * @throws java.lang.Exception 在验签失败或者其他异常的情况下会抛出异常
    */
-  ReceiptOfMsg verifyAndGetReceipt(Integer channelId, Map<String, String> paramMap) throws Exception ;
+  ReceiptOfMsg verifyAndGetReceipt(String channelServiceCode, Map<String, String> paramMap) throws Exception ;
 
 }
