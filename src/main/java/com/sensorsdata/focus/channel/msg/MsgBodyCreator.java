@@ -22,20 +22,27 @@ import java.util.Map;
  * @version 1.0.0
  * @since 2020/06/24 11:59
  */
-public interface MsgBodyHandler {
+public abstract class MsgBodyCreator {
+  /**
+   * 使用 msgChannel 配置初始化 MsgBodyCreator
+   * @param msgChannelConfig 通道配置
+   *                         样例：{"url":"http://10.120.156.66:8997/webhook","method":"POST","plan_params_tpl":[{"name":"mo_var_1","cname":"你好","data_type":"STRING","number_edit_style":null,"string_edit_style":"RICH"}],"user_property_params":[{"name":"dong_key_1","value":"${user.getui_id!\"空省\"}"}]}
+   */
+  public MsgBodyCreator(String msgChannelConfig) {
+
+  }
 
   /**
    * 返回实际的消息体 json 串，如果有占位符，则进行替换
    *
-   * @param msgBody           符合本消息体规范的消息体；
+   * @param msgTemplate       符合本消息体规范的消息体模板；
    *                          占位 key 的规则：${user.VIPgrade!\"123\"}"}
    *                          样例：{"template_id":"123","template_param_list":[{"name":"1","value":"${user.VIPgrade!\"123\"}"}],"template_content":null}
-   * @param msgChannelConfig  通道配置
-   *                          样例：{"url":"http://10.120.156.66:8997/webhook","method":"POST","plan_params_tpl":[{"name":"mo_var_1","cname":"你好","data_type":"STRING","number_edit_style":null,"string_edit_style":"RICH"}],"user_property_params":[{"name":"dong_key_1","value":"${user.getui_id!\"空省\"}"}]}
+   *
    * @param propsMap          属性 Map，用于替换消息体中的占位符
    * @return 实际消息对象 json 串
    * @throws java.lang.Exception 处理报错会抛出异常
    */
-  String processBody(String msgBody, String msgChannelConfig, Map<String, Object> propsMap) throws Exception ;
+  public abstract String createMsgBody(String msgTemplate, Map<String, Object> propsMap) throws Exception ;
 
 }
