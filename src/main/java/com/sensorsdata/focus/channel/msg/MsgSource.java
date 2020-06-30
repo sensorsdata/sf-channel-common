@@ -16,7 +16,7 @@
 package com.sensorsdata.focus.channel.msg;
 
 /**
- * 消息来源定义
+ * 消息来源定义（产品组件）
  *
  * @version 1.0.0
  * @since 2020/06/28 17:44

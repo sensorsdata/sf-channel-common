@@ -17,6 +17,8 @@ package com.sensorsdata.focus.channel.msg;
 
 import lombok.Data;
 
+import java.util.Map;
+
 /**
  * 神策系统中的统一通道消息
  *
@@ -49,8 +51,21 @@ public class ChannelMsg {
   private String failReason;
 
   /**
-   * 神策扩展信息
+   * 神策扩展信息，可能包含如下几类信息
+   *
+   * 1. 产品组件来源相关的额外业务数据：
+   *    例如 神策智能运营产品线含如下字段：
+   *       Integer planId - 计划 id，
+   *       String planType - 计划类型(中文名称)，
+   *       Integer planAudienceId - 受众 id，select all 的情况无值，
+   *       Integer planStrategyId - 对照组/策略组，
+   *       Integer strategyUnitId - 策略器 ID，
+   *       Long enterPlanTime - 进入计划的时间
+   *  2. 消息来源信息(产品组件) ：
+   *       MsgSource msgSource - 消息来源
+   *  3.   String projectName - 项目名称
+   *  4.   Map<String, Object> userProfile - 用户属性信息
    */
-  private ExtraData extraData;
+  private Map<String, Object> extraData;
 
 }

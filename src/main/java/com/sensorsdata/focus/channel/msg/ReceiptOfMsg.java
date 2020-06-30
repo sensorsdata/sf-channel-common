@@ -37,6 +37,11 @@ public class ReceiptOfMsg {
   private String errDesc;
 
   public enum ReceiptStatus{
-    SUCCESS, USER_BLOCK, SYSTEM_FAILED
+    /** 成功 */
+    SUCCESS,
+    /** 失败 */
+    FAILED,
+    /** 用户拒收，目前只有微信模板消息回执中会有此状态 */
+    USER_BLOCK,
   }
 }

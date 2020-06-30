@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sensorsdata.focus.channel.msg.body.sample;
+package com.sensorsdata.focus.channel.msg.body;
 
 import com.sensorsdata.focus.channel.entry.LandingType;
 

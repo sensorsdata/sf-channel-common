@@ -13,26 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sensorsdata.focus.channel.msg.body.sample;
+package com.sensorsdata.focus.channel.msg.body;
 
 import lombok.Data;
 
 import java.util.Map;
 
 /**
- * Webhook 消息体
+ * 短信通道消息体
  *
  * @version 1.0.0
- * @since 2020/06/22 16:05
+ * @since 2020/06/22 15:40
  */
 @Data
-public class WebHookMsg {
+public class TextMsg {
   /**
-   * webhook 发送 id
+   * 短信模板 id
    */
-  private String sendId;
+  private String templateId;
   /**
-   * webhook 请求参数
+   * 短信模板参数值
    */
   private Map<String, String> parameters;
+  /**
+   * 短信体
+   */
+  private String templateContent;
+  /**
+   * 手机号
+   */
+  private String phoneNumber;
+  /**
+   * 签名ID，该字段为空则使用应用默认签名（极光短信使用）
+   */
+  private Integer smsSign;
 }
