@@ -15,6 +15,7 @@
  */
 package com.sensorsdata.focus.channel.msg;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,6 +33,6 @@ public interface CallbackClient {
    * @return 消息回执
    * @throws java.lang.Exception 在验签失败或者其他异常的情况下会抛出异常
    */
-  ReceiptOfMsg verifyAndGetReceipt(String channelServiceCode, Map<String, String> paramMap) throws Exception ;
+  List<ReceiptOfMsg> verifyAndGetReceipt(String channelServiceCode, Map<String, String> paramMap) throws Exception ;
 
 }
