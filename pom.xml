@@ -153,12 +153,12 @@
     </build>
 
 <!--    deploy命令： mvn clean deploy -U -e -X -DskipTests -P snapshot -Dmaven.compile.fork=true -f pom.xml-->
-<!--    <distributionManagement>-->
-<!--        <snapshotRepository>-->
-<!--            <id>nexus</id>-->
-<!--            <url>http://git.sensorsdata.cn:8280/nexus/content/repositories/snapshots</url>-->
-<!--        </snapshotRepository>-->
-<!--    </distributionManagement>-->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus</id>
+            <url>http://git.sensorsdata.cn:8280/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <profiles>
         <profile>

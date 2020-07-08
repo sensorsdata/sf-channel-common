@@ -28,10 +28,6 @@ import java.util.Map;
 @Data
 public class WebHookMsg {
   /**
-   * webhook 发送 id
-   */
-  private String sendId;
-  /**
    * webhook 请求参数
    */
   private Map<String, String> parameters;

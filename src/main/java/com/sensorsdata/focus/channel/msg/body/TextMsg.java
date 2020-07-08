@@ -40,10 +40,6 @@ public class TextMsg {
    */
   private String templateContent;
   /**
-   * 手机号
-   */
-  private String phoneNumber;
-  /**
    * 签名ID，该字段为空则使用应用默认签名（极光短信使用）
    */
   private Integer smsSign;

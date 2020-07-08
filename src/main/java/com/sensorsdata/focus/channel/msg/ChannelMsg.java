@@ -39,6 +39,8 @@ public class ChannelMsg {
   private Integer channelId;
   /** 发起发送消息请求的时间，用于计算到发送完成的时间间隔或者收到消息的时间间隔 */
   private Long triggerTime;
+  /** 发送 ID，例如：对于微信就是 openId，对于短信就是手机号 */
+  private String sendId ;
 
   /**
    * 通道消息体

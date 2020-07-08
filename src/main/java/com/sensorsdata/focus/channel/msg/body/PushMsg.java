@@ -29,10 +29,6 @@ import java.util.Map;
  */
 @Data
 public class PushMsg {
-  /**
-   * 客户端 ID
-   */
-  private String clientId;
 
   /**
    * 标题，不一定有，iOS 没有

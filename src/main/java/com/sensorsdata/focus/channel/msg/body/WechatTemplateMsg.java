@@ -28,10 +28,6 @@ import java.util.Map;
 @Data
 public class WechatTemplateMsg {
   /**
-   * 公众号的用户的唯一标识
-   */
-  private String openId;
-  /**
    * 微信模板 id
    */
   private String templateId;
