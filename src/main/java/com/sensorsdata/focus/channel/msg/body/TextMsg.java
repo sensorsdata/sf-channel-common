@@ -40,7 +40,9 @@ public class TextMsg {
    */
   private String templateContent;
   /**
-   * 签名ID，该字段为空则使用应用默认签名（极光短信使用）
+   * 签名信息，具体使用场景：
+   *  极光短信：签名ID，该字段为空则使用应用默认签名
+   *  阿里云短信：签名内容
    */
-  private Integer smsSign;
+  private String smsSign;
 }

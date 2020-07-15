@@ -65,8 +65,7 @@ public class ChannelMsgUtil {
 
   public static String generateIntentFromTemplate(PushChannelMsg pushChannelMsg, String channelLevel3rdIntentTemplate) {
     PushMsg pushMsg = pushChannelMsg.getPushMsg();
-    String intentTemplate =
-        StringUtils.defaultIfBlank(pushMsg.getIntentTemplate(), channelLevel3rdIntentTemplate);
+    String intentTemplate = channelLevel3rdIntentTemplate;
     if (StringUtils.isNotBlank(intentTemplate)) {
       String encodedSfData;
       try {
