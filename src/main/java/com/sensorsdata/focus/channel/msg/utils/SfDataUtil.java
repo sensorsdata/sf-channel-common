@@ -23,7 +23,6 @@ import java.util.Optional;
 @UtilityClass
 public class SfDataUtil {
 
-  private static Object instance = new Object();
   /**
    * 这是一段比较恶心的 merge 代码.
    *
@@ -57,8 +56,7 @@ public class SfDataUtil {
 
     sfDataNode.put("sf_msg_id", messagingTask.getChannelMsg().getMsgId()); // random 一个.
 
-
-    sfDataNode.put("sf_plan_id", messagingTask.getChannelMsg().getExtraData());
+    sfDataNode.put("sf_plan_id", Optional.ofNullable(extraData.getPlanId()).map(Object::toString).orElse(null));
 
     sfDataNode.put("sf_audience_id", String.valueOf(extraData.getPlanAudienceId()));
 
