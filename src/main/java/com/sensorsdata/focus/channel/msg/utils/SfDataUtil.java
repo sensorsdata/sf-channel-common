@@ -4,10 +4,13 @@ import com.sensorsdata.focus.channel.entry.LandingType;
 import com.sensorsdata.focus.channel.msg.ExtraData;
 import com.sensorsdata.focus.channel.msg.PushChannelMsg;
 import com.sensorsdata.focus.channel.msg.body.PushMsg;
+
+import lombok.Data;
 import lombok.experimental.UtilityClass;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -30,17 +33,17 @@ public class SfDataUtil {
    * @return
    * @throws java.io.IOException
    */
-  public static LinkedHashMap<String,Object> buildSfData(PushChannelMsg messagingTask) throws IOException {
+  public static LinkedHashMap<String, Object> buildSfData(PushChannelMsg messagingTask) throws IOException {
 
     ExtraData extraData = new ExtraData();
-    if (messagingTask.getExtraData()!=null){
+    if (messagingTask.getExtraData() != null) {
       extraData = messagingTask.getExtraData();
     }
     PushMsg pushTask = messagingTask.getPushMsg();
-    LinkedHashMap<String,Object> sfDataNode = new LinkedHashMap<>();
-    LinkedHashMap<String,Object> customizedNode = new LinkedHashMap<>();
+    LinkedHashMap<String, Object> sfDataNode = new LinkedHashMap<>();
+    LinkedHashMap<String, Object> customizedNode = new LinkedHashMap<>();
 
-    if (pushTask.getCustomized()!=null && !pushTask.getCustomized().isEmpty()) {
+    if (pushTask.getCustomized() != null && !pushTask.getCustomized().isEmpty()) {
       for (Map.Entry<String, String> entry : pushTask.getCustomized().entrySet()) {
         if (StringUtils.isBlank(entry.getKey())) {
           continue;
@@ -68,10 +71,8 @@ public class SfDataUtil {
 
     sfDataNode.put("sf_plan_type", extraData.getPlanType());
 
+    sfDataNode.put("sf_enter_plan_time", extraData.getEnterPlanTime());
+
     return sfDataNode;
   }
-
-
-
-
 }
