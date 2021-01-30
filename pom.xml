@@ -30,7 +30,7 @@
 
     <groupId>com.sensorsdata.focus</groupId>
     <artifactId>sf-channel-common</artifactId>
-    <version>0.1.7</version>
+    <version>1.0.2</version>
     <name>sf-channel-common</name>
     <description>Sensors Focus Channel Common</description>
     <url>http://sensorsdata.cn</url>
@@ -95,6 +95,13 @@
             <version>3.9</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.72</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
