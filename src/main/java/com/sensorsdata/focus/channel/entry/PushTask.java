@@ -57,4 +57,15 @@ public class PushTask {
    * SF 内置的数据封装格式
    */
   private String sfData;
+
+  /**
+   * 通知栏图标
+   */
+  private String notificationIcon;
+
+  /**
+   * 通知栏高级设置
+   */
+  private String advancedSetting;
+
 }
